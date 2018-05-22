@@ -63,8 +63,8 @@ function authorizeUser(req, res, next) {
         console.log(settings.auth_key);
         console.log('Received Key');
         console.log(req.body['key']);
-        next();
-        //res.sendStatus(401);
+        //next();
+        res.sendStatus(401);
     }
     else {
         next();
