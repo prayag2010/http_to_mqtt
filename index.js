@@ -112,8 +112,13 @@ app.get('/keep_alive/', logRequest, function (req, res) {
     res.sendStatus(200);
 });
 
-app.get('/testmeplz/', logRequest, function (req, res) {
-    mqttClient.publish('test', 'successful');
+app.get('/light0/', logRequest, function (req, res) {
+    mqttClient.publish('lig/comm/0', 'S');
+    res.sendStatus(200);
+});
+
+app.get('/fan0/', logRequest, function (req, res) {
+    mqttClient.publish('fan/comm/0', 'S');
     res.sendStatus(200);
 });
 
