@@ -113,12 +113,12 @@ app.get('/keep_alive/', logRequest, function (req, res) {
 });
 
 app.get('/light0/', logRequest, function (req, res) {
-    mqttClient.publish('lig/comm/0', 'S');
+    mqttClient.publish('lig/stae/0', 'S');
     res.sendStatus(200);
 });
 
 app.get('/fan0/', logRequest, function (req, res) {
-    mqttClient.publish('fan/comm/0', 'S');
+    mqttClient.publish('fan/stae/0', 'S');
     res.sendStatus(200);
 });
 
