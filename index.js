@@ -122,6 +122,11 @@ app.get('/fan0/', logRequest, function (req, res) {
     res.sendStatus(200);
 });
 
+app.get('/light1/', logRequest, function (req, res) {
+    mqttClient.publish('lig/comm/1', 'S');
+    res.sendStatus(200);
+});
+
 app.post('/post/', logRequest, authorizeUser, checkSingleFileUpload, checkMessagePathQueryParameter, checkTopicQueryParameter, ensureTopicSpecified, function (req, res) {
     mqttClient.publish(req.body['topic'], req.body['message']);
     res.sendStatus(200);
