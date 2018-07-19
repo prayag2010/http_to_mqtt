@@ -133,7 +133,7 @@ app.get('/light1/', logRequest, function (req, res) {
 // });
 
 app.post('/post/', logRequest, function (req, res) {
-    mqttClient.publish('test', req);
+    mqttClient.publish('test', JSON.stringify(req.body));
     res.sendStatus(200);
 });
 
