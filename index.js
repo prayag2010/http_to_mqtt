@@ -133,7 +133,7 @@ app.get('/light1/', logRequest, function (req, res) {
 // });
 
 app.post('/post/', logRequest, function (req, res) {
-    mqttClient.publish('test', req.body.result.parameters['color']);
+    mqttClient.publish('test', req.body['id']);
     res.sendStatus(200);
 });
 
