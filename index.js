@@ -127,12 +127,12 @@ app.get('/light1/', logRequest, function (req, res) {
     res.sendStatus(200);
 });
 
-// app.post('/post/', logRequest, authorizeUser, checkSingleFileUpload, checkMessagePathQueryParameter, checkTopicQueryParameter, ensureTopicSpecified, function (req, res) {
-//     mqttClient.publish(req.body['topic'], req.body['message']);
-//     res.sendStatus(200);
-// });
+app.post('/post/', logRequest, authorizeUser, checkSingleFileUpload, checkMessagePathQueryParameter, checkTopicQueryParameter, ensureTopicSpecified, function (req, res) {
+    mqttClient.publish(req.body['topic'], req.body['message']);
+    res.sendStatus(200);
+});
 
-app.post('/post/', logRequest, function (req, res) {
+app.post('/dialog/', logRequest, function (req, res) {
     mqttClient.publish('test', req.body.result.parameters['color']);
     res.sendStatus(200);
 });
