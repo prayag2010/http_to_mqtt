@@ -129,7 +129,7 @@ app.get('/light1/', logRequest, function (req, res) {
 
 app.post('/googletest/', logRequest, function (req, res) {
     var lol = req.body.queryResult.parameters['state'];
-    console.log(lol);
+    console.log(lol[0]);
     if(String(lol) == "[ 'on' ]"){
         console.log('FUCK');
     }
