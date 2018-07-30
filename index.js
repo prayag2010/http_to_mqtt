@@ -134,7 +134,7 @@ app.post('/googletest/', logRequest, function (req, res) {
 //         console.log('FUCK');
 //     }
     
-    var dfIntent = req.body.intent['displayName'];
+    var dfIntent = req.body.queryResult.intent['displayName'];
     console.log(dfIntent);
     if(dfIntent == 'lights'){
         console.log('Lights intent detected');
