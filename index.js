@@ -128,10 +128,21 @@ app.get('/light1/', logRequest, function (req, res) {
 });
 
 app.post('/googletest/', logRequest, function (req, res) {
-    var lol = req.body.queryResult.parameters['state'];
-    console.log(lol[0]);
-    if(String(lol) == 'on'){
-        console.log('FUCK');
+//     var lol = req.body.queryResult.parameters['state'];
+//     console.log(lol[0]);
+//     if(String(lol) == 'on'){
+//         console.log('FUCK');
+//     }
+    
+    var dfIntent = req.body.intent['displayName'];
+    console.log(dfIntent);
+    if(dfIntent == 'lights'){
+        console.log('Lights intent detected');
+        var state = req.body.queryResult.parameters['state'];
+        console.log('state[0]');
+        if(String(state[0]) == 'on'){
+            console.log('Lights on');
+        }
     }
     res.sendStatus(200);
 });
