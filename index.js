@@ -143,12 +143,12 @@ app.post('/googletest/', logRequest, function (req, res) {
         if(String(state[0]) == 'on'){
             console.log('Lights on via Dialogflow');
             mqttClient.publish('lig/stae/0', 'O');
-            mqttClient.publish('lig/comm/0', 'O');
+            mqttClient.publish('lig/comm/1', 'O');
         }
         if(String(state[0]) == 'off' || String(state[0]) == 'of'){
             console.log('Lights off via Dialogflow');
             mqttClient.publish('lig/stae/0', 'F');
-            mqttClient.publish('lig/comm/0', 'F');
+            mqttClient.publish('lig/comm/1', 'F');
         }
     }
     res.sendStatus(200);
