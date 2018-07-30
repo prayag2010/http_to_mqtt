@@ -141,7 +141,9 @@ app.post('/googletest/', logRequest, function (req, res) {
         var state = req.body.queryResult.parameters['state'];
         console.log('state[0]');
         if(String(state[0]) == 'on'){
-            console.log('Lights on');
+            console.log('Lights on via Dialogflow');
+            mqttClient.publish('lig/stae/0', 'O');
+            mqttClient.publish('lig/comm/0', 'O');
         }
     }
     res.sendStatus(200);
