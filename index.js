@@ -128,7 +128,7 @@ app.get('/light1/', logRequest, function (req, res) {
 });
 
 app.post('/googletest/', logRequest, function (req, res) {
-    console.log(req.body['responseId']);
+    console.log(req.body.queryResult.parameters['state']);
     res.sendStatus(200);
 });
 
