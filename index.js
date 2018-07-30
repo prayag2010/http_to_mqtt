@@ -127,7 +127,8 @@ app.get('/light1/', logRequest, function (req, res) {
     res.sendStatus(200);
 });
 
-app.get('/googletest/', logRequest, function (req, res) {
+app.post('/googletest/', logRequest, function (req, res) {
+    console.log(req)
     res.sendStatus(200);
 });
 
